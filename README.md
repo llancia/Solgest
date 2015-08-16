@@ -1,22 +1,15 @@
-## A PHP login script (ADVANCED VERSION)
+## php-login-advanced
 
-A simple, but secure PHP login script. Similar to minimal version, but much more features: PDO, Register, login, logout,
-email verification, password reset, edit user data, gravatars, captchas, remember me / stay logged in cookies,
+A simple, but secure PHP login script. Similar to minimal version, but much more features: PDO, Register, login, logout, email verification, password reset, edit user data, gravatars, captchas, remember me / stay logged in cookies,
 "remember me" supports parallel login from multiple devices, login with email, i18n/internationalization,
-mail sending via PHPMailer (SMTP or PHP's mail() function/linux sendmail). Uses the ultra-modern & future-proof PHP 5.5.
-BLOWFISH hashing/salting functions (includes the official PHP 5.3 & PHP 5.4 compatibility pack, which makes those
+mail sending via PHPMailer (SMTP or PHP's mail() function/linux sendmail). Uses the ultra-modern & future-proof PHP 5.5. BLOWFISH hashing/salting functions (includes the official PHP 5.3 & PHP 5.4 compatibility pack, which makes those
 functions available in those versions too).
 
 [![Support the project](_installation/banner-host1plus.png)](https://affiliates.host1plus.com/ref/devmetal/36f4d828.html)
 
 **Please note: This version is not maintained anymore. I'm focussing on developing 
 [HUGE](https://github.com/panique/huge) and I highly recommends you to also use that version.
-However, there are two interesting forks of php-login-advanced, have a look at [austinkregel's fork here](https://github.com/panique/php-login-advanced/issues/45)
-and [devplanete's fork here](https://github.com/panique/php-login-advanced/issues/23). Thanks, gentlemen!**
-
-Follow the project on **[Twitter](https://twitter.com/simplephplogin)** or
-**[Facebook](https://www.facebook.com/pages/PHP-Login-Script/461306677235868)**. 
-Also have a look on my blog if you like: **[Dev Metal](http://www.dev-metal.com)**.
+However, there are two interesting forks of php-login-advanced, have a look at [austinkregel's fork here](https://github.com/panique/php-login-advanced/issues/45) and [devplanete's fork here](https://github.com/panique/php-login-advanced/issues/23). Thanks, gentlemen!**
 
 **This script is part of the php-login project, a collection of 4 different login scripts**.
 See [php-login.net](http://www.php-login.net) for more info.
@@ -121,3 +114,7 @@ Please commit only in *develop* branch. The *master* branch will always contain 
 
 If you think this script is useful and saves you a lot of work, then think about getting your next server from
 [Host1Plus](https://affiliates.host1plus.com/ref/devmetal/36f4d828.html). Thanks! :)
+
+## My blog
+
+Also have a look on my blog if you like: **[Dev Metal](http://www.dev-metal.com)**.
