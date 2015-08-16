@@ -1,19 +1,19 @@
 <?php include('_header.php'); ?>
 
 <!-- clean separation of HTML and PHP -->
-<h2><?php echo $_SESSION['user_name']; ?> <?php echo WORDING_EDIT_YOUR_CREDENTIALS; ?></h2>
+<h2><?php echo htmlspecialchars($_SESSION['user_name']); ?> <?php echo WORDING_EDIT_YOUR_CREDENTIALS; ?></h2>
 
 <!-- edit form for username / this form uses HTML5 attributes, like "required" and type="email" -->
 <form method="post" action="edit.php" name="user_edit_form_name">
     <label for="user_name"><?php echo WORDING_NEW_USERNAME; ?></label>
-    <input id="user_name" type="text" name="user_name" pattern="[a-zA-Z0-9]{2,64}" required /> (<?php echo WORDING_CURRENTLY; ?>: <?php echo $_SESSION['user_name']; ?>)
+    <input id="user_name" type="text" name="user_name" pattern="[a-zA-Z0-9]{2,64}" required /> (<?php echo WORDING_CURRENTLY; ?>: <?php echo htmlspecialchars($_SESSION['user_name']); ?>)
     <input type="submit" name="user_edit_submit_name" value="<?php echo WORDING_CHANGE_USERNAME; ?>" />
 </form><hr/>
 
 <!-- edit form for user email / this form uses HTML5 attributes, like "required" and type="email" -->
 <form method="post" action="edit.php" name="user_edit_form_email">
     <label for="user_email"><?php echo WORDING_NEW_EMAIL; ?></label>
-    <input id="user_email" type="email" name="user_email" required /> (<?php echo WORDING_CURRENTLY; ?>: <?php echo $_SESSION['user_email']; ?>)
+    <input id="user_email" type="email" name="user_email" required /> (<?php echo WORDING_CURRENTLY; ?>: <?php echo htmlspecialchars($_SESSION['user_email']); ?>)
     <input type="submit" name="user_edit_submit_email" value="<?php echo WORDING_CHANGE_EMAIL; ?>" />
 </form><hr/>
 
