@@ -100,9 +100,7 @@ private or commercial projects.
 
 ## Contribute
 
-This script is not developed any further, so only commit bugfixes, not new features.
-If you want to add new features etc, please contribute into the https://github.com/panique/php-login repo.
-Please commit only in *develop* branch. The *master* branch will always contain the stable version.
+This script is not developed any further due to End of Lifetime, so please only commit bugfixes, not new features, no new translations or similar. If you really want to develop on this project then please fork it and commit to your version. Feel free to do with this project whatever you want.
 
 ## Support
 
