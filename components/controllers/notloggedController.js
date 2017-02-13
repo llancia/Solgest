@@ -9,14 +9,14 @@ angular.module('mostPopularListingsApp.login', ['ngRoute'])
 
 // Routing configuration for this module
 .config(['$routeProvider',function($routeprovider){
-	$routeprovider.when('/login2', {
-		controller: 'LoginController',
-		templateUrl: 'components/views/loginView.html'
+	$routeprovider.when('/login', {
+		controller: 'notloggedController',
+		templateUrl: 'components/views/notloggedView.html'
 	});
 }])
 
 // Controller definition for this module
-.controller('LoginController', function($scope,$http,$timeout) {
+.controller('notloggedController', ['$scope','$timeout','$http','Page','Auth', function($scope,$timeout,$http, Page,Auth) {
 
 		// Global variables for this controller
 		var responseStatus = '';
@@ -28,7 +28,20 @@ angular.module('mostPopularListingsApp.login', ['ngRoute'])
 		// controller is invoked
 		init();
 
-		function init(){};
+		function init(){
+           console.log(Auth.isLoggedIn())
+        };
+
+        //
+        $scope.login = function () {
+            console.log("login!")
+            var user = {nome: "tizio"}
+
+              Auth.setUser(user); //Update the state of the user in the app
+        console.log(Auth.isLoggedIn());
+    };
+    
+ 
 
 		// Get requestors IP address from httpbin.org
 		function loadUserIp(){
@@ -62,9 +75,10 @@ angular.module('mostPopularListingsApp.login', ['ngRoute'])
 		};
 
 		this.message = "Login Time!";
+        Page.setTitle('Login');
 		
 		// // Adding small delay for IP address to be populated before loading the view
 		var filterTextTimeout = $timeout(function() {
 			loadUserIp();            
         }, 500); // delay 500 ms		
-});
+}]);

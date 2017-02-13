@@ -18,10 +18,10 @@
   <base href="/Soliptica/">
 </head>
 <body>
-  <div ng-include="'components/views/navbarView.html'"></div>
-  
+  <header ng-include="'components/views/navbarView.html'"></header>
+  <main class="container valign-wrapper row" ng-view></main>
 
-    <div ng-view></div>
+    
 <div ng-include="'components/views/footerView.html'"></div>
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
@@ -35,7 +35,7 @@
  
   <script src="./components/controllers/AboutController.js"></script>
   <script src="./components/controllers/HomeController.js"></script>
-  <script src="./components/controllers/LoginController.js"></script>
-
+  
+  <script src="./components/controllers/notloggedController.js"></script>
 </body>
 </html>

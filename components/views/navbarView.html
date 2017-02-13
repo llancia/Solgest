@@ -4,7 +4,8 @@
       <ul class="right hide-on-med-and-down">
         <li><a href="#/">Home</a></li>
         <li><a href="#/about">About</a></li>
-        <li><a href="#/login">Login</a></li>
+        <li ng-hide="user_obj"><a href="#/login">Login</a></li>
+        <li ng-hide="!user_obj">{{user_obj.nome}}</li>
       </ul>
 
       <ul id="nav-mobile" class="side-nav">

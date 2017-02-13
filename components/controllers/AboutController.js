@@ -25,9 +25,9 @@ angular.module('mostPopularListingsApp.about', ['ngRoute'])
 	init();
 
 	function init(){
-	
+	Page.setTitle('About');
+
 	};
- 	Page.setTitle('About');
 	this.message = "Hello About!";
 
 }]);

@@ -34,9 +34,26 @@ mostPopularListingsApp.service('Page', function(){
   };
 });
 
+mostPopularListingsApp.factory('Auth', function(){
+var user;
+
+return{
+    setUser : function(aUser){
+        user = aUser;
+    },
+    isLoggedIn : function(){
+        return(user)? user : false;
+    }
+  }
+});
 
 
-mostPopularListingsApp.controller("MainController", ['$scope','Page', function($scope,Page){
+
+mostPopularListingsApp.controller("MainController", ['$scope','Page','Auth', function($scope,Page,Auth){
 	$scope.Page = Page;
-	Page.setTitle("test");
+	Page.setTitle("Home");
+
+$scope.$watch( function () { return Auth.isLoggedIn(); }, function (data) {
+    $scope.user_obj = data;
+  }, true);
 }]);
