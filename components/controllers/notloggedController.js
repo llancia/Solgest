@@ -16,7 +16,7 @@ angular.module('mostPopularListingsApp.login', ['ngRoute'])
 }])
 
 // Controller definition for this module
-.controller('notloggedController', ['$scope','$timeout','$http','Page','Auth', function($scope,$timeout,$http, Page,Auth) {
+.controller('notloggedController', ['$scope','$timeout','$http','$location','Page','Auth', function($scope,$timeout,$http,$location, Page,Auth) {
 
 		// Global variables for this controller
 		var responseStatus = '';
@@ -39,6 +39,7 @@ angular.module('mostPopularListingsApp.login', ['ngRoute'])
 
               Auth.setUser(user); //Update the state of the user in the app
         console.log(Auth.isLoggedIn());
+        $location.path("/home");
     };
     
  
