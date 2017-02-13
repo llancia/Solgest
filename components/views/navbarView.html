@@ -6,6 +6,7 @@
         <li><a href="#/about">About</a></li>
         <li ng-hide="user_obj"><a href="#/login">Login</a></li>
         <li ng-hide="!user_obj">{{user_obj.nome}}</li>
+        <li ng-hide="!user_obj"><a href="" ng-click="logout()"> Logout </a></li>
       </ul>
 
       <ul id="nav-mobile" class="side-nav">

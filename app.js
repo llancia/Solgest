@@ -53,7 +53,11 @@ mostPopularListingsApp.controller("MainController", ['$scope','Page','Auth', fun
 	$scope.Page = Page;
 	Page.setTitle("Home");
 
-$scope.$watch( function () { return Auth.isLoggedIn(); }, function (data) {
+	$scope.$watch( function () { return Auth.isLoggedIn(); }, function (data) {
     $scope.user_obj = data;
   }, true);
+$scope.logout = function(){
+	Auth.setUser(undefined);
+}
+
 }]);
