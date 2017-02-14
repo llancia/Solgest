@@ -13,10 +13,10 @@
  *          by the way, it's bad style to use "root", but for development it will work.
  * DB_PASS: the password of the above user
  */
-define("DB_HOST", "127.0.0.1");
-define("DB_NAME", "login");
+define("DB_HOST", "localhost");
+define("DB_NAME", "solgest");
 define("DB_USER", "root");
-define("DB_PASS", "mysql");
+define("DB_PASS", "root");
 
 /**
  * Configuration for: Cookies
@@ -61,11 +61,11 @@ define("COOKIE_SECRET_KEY", "1gp@TMPS{+$78sfpMJFe-92s");
  * It's really recommended to use SMTP!
  *
  */
-define("EMAIL_USE_SMTP", false);
-define("EMAIL_SMTP_HOST", "yourhost");
+define("EMAIL_USE_SMTP", true);
+define("EMAIL_SMTP_HOST", "ssl://srv-hp6.netsons.net");
 define("EMAIL_SMTP_AUTH", true);
-define("EMAIL_SMTP_USERNAME", "yourusername");
-define("EMAIL_SMTP_PASSWORD", "yourpassword");
+define("EMAIL_SMTP_USERNAME", "no-reply@lorenzolancia.eu");
+define("EMAIL_SMTP_PASSWORD", "bulabula");
 define("EMAIL_SMTP_PORT", 465);
 define("EMAIL_SMTP_ENCRYPTION", "ssl");
 
@@ -84,9 +84,9 @@ define("EMAIL_PASSWORDRESET_CONTENT", "Please click on this link to reset your p
  * Set the absolute URL to register.php, necessary for email verification links
  */
 define("EMAIL_VERIFICATION_URL", "http://127.0.0.1/php-login-advanced/register.php");
-define("EMAIL_VERIFICATION_FROM", "no-reply@example.com");
-define("EMAIL_VERIFICATION_FROM_NAME", "My Project");
-define("EMAIL_VERIFICATION_SUBJECT", "Account activation for PROJECT XY");
+define("EMAIL_VERIFICATION_FROM", "no-reply@lorenzolancia.eu");
+define("EMAIL_VERIFICATION_FROM_NAME", "Solitpica");
+define("EMAIL_VERIFICATION_SUBJECT", "Account activation for SOLGEST");
 define("EMAIL_VERIFICATION_CONTENT", "Please click on this link to activate your account:");
 
 /**

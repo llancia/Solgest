@@ -30,14 +30,21 @@ angular.module('mostPopularListingsApp.login', ['ngRoute'])
 
 		function init(){
            console.log(Auth.isLoggedIn())
+		   $scope.form = {}
         };
 
         //
         $scope.login = function () {
-            console.log("login!")
-            var user = {nome: "tizio"}
-
-              Auth.setUser(user); //Update the state of the user in the app
+            console.log($scope.form)
+			
+			Auth.Login($scope.form.uname,$scope.form.pswd, $scope.form.remember,
+			function(response){
+				console.log(response)
+				var user = {nome: "tizio"}
+				Auth.setUser(user);
+			})
+     
+	 
         console.log(Auth.isLoggedIn());
         $location.path("/home");
     };

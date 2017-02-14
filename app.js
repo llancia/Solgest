@@ -34,10 +34,32 @@ mostPopularListingsApp.service('Page', function(){
   };
 });
 
-mostPopularListingsApp.factory('Auth', function(){
-var user;
+mostPopularListingsApp.factory('Auth',['$http', function($http){
+var user
 
 return{
+	Login : function(username,password,rememberme,callback){
+		if(!rememberme) rememberme=0;
+		
+		$http.post('/Soliptica/server/index.php', "user_name="+encodeURIComponent(username)+
+																		 "&user_password="+encodeURIComponent(password)+
+																		 "&user_rememberme="+encodeURIComponent(rememberme)+"&login=Log+in",
+																		 {
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'}
+       
+    }
+							)
+                .success(function (response) {
+                    callback(response);
+                })},
+
+		Logout: function(callback){
+			$http.get('/Soliptica/server/index.php?logout')
+			.success(function(response){
+				callback(response);
+			})
+		},
+
     setUser : function(aUser){
         user = aUser;
     },
@@ -45,7 +67,11 @@ return{
         return(user)? user : false;
     }
   }
-});
+}]);
+
+
+
+
 
 
 
@@ -56,8 +82,11 @@ mostPopularListingsApp.controller("MainController", ['$scope','Page','Auth', fun
 	$scope.$watch( function () { return Auth.isLoggedIn(); }, function (data) {
     $scope.user_obj = data;
   }, true);
+
 $scope.logout = function(){
-	Auth.setUser(undefined);
-}
+	Auth.Logout(function(response){
+		Auth.setUser(undefined);
+	});
+};
 
 }]);
