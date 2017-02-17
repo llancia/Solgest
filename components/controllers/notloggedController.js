@@ -39,14 +39,14 @@ angular.module('mostPopularListingsApp.login', ['ngRoute'])
 			
 			Auth.Login($scope.form.uname,$scope.form.pswd, $scope.form.remember,
 			function(response){
-				console.log(response)
-				var user = {nome: "tizio"}
+				var user = response;
 				Auth.setUser(user);
+				console.log(Auth.isLoggedIn());
+        		$location.path("/summary");
 			})
      
 	 
-        console.log(Auth.isLoggedIn());
-        $location.path("/home");
+        
     };
     
  

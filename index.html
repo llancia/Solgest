@@ -19,14 +19,14 @@
 </head>
 <body>
   <header ng-include="'components/views/navbarView.html'"></header>
-  <main class="container valign-wrapper row" ng-view></main>
+  <main id="mainview" ng-view></main>
 
     
 <div ng-include="'components/views/footerView.html'"></div>
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
   -->
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="./resources/bower/jquery.js"></script>
   <script src="./resources/bower/angular/angular.js"></script>
   <script src="./resources/bower/angular-route/angular-route.min.js"></script>
   <script src="./app.js"></script>
@@ -35,7 +35,7 @@
  
   <script src="./components/controllers/AboutController.js"></script>
   <script src="./components/controllers/HomeController.js"></script>
-  
   <script src="./components/controllers/notloggedController.js"></script>
+  <script src="./components/controllers/summaryController.js"></script>
 </body>
 </html>

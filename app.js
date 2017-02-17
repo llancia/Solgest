@@ -51,7 +51,9 @@ return{
 							)
                 .success(function (response) {
                     callback(response);
-                })},
+                }).error(function(response){
+									 Materialize.toast('Login Error', 4000);
+								})},
 
 		Logout: function(callback){
 			$http.get('/Soliptica/server/index.php?logout')
@@ -62,6 +64,7 @@ return{
 
     setUser : function(aUser){
         user = aUser;
+		console.log(aUser);
     },
     isLoggedIn : function(){
         return(user)? user : false;
@@ -75,7 +78,7 @@ return{
 
 
 
-mostPopularListingsApp.controller("MainController", ['$scope','Page','Auth', function($scope,Page,Auth){
+mostPopularListingsApp.controller("MainController", ['$scope','$location','Page','Auth', function($scope,$location,Page,Auth){
 	$scope.Page = Page;
 	Page.setTitle("Home");
 
@@ -87,6 +90,9 @@ $scope.logout = function(){
 	Auth.Logout(function(response){
 		Auth.setUser(undefined);
 	});
+	$location.path("/");
 };
+
+
 
 }]);

@@ -12,3 +12,14 @@
   .separator{
       height: 20px;
   }
+
+  #mainview{
+    display: -ms-flex;
+     display: -webkit-flex;
+      display: flex; 
+  }
+
+  #mainview>div{
+     flex:1;
+     width: 70%;
+  }
