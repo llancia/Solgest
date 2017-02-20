@@ -3,7 +3,9 @@
 <!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!-->
-<html lang="en" ng-app="mostPopularListingsApp" class="no-js" ng-controller="MainController"> <!--<![endif]-->
+<html lang="en" ng-app="mostPopularListingsApp" class="no-js" ng-controller="MainController">
+<!--<![endif]-->
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,17 +14,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
   <!--<link rel="stylesheet" href="resources/css/app.css">-->
   <base href="/Soliptica/">
 </head>
+
 <body>
   <header ng-include="'components/views/navbarView.html'"></header>
   <main id="mainview" ng-view></main>
 
-    
-<div ng-include="'components/views/footerView.html'"></div>
+
+  <div ng-include="'components/views/footerView.html'"></div>
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
   -->
@@ -32,10 +35,11 @@
   <script src="./app.js"></script>
   
   <script src="js/materialize.js"></script>
- 
+
   <script src="./components/controllers/AboutController.js"></script>
   <script src="./components/controllers/HomeController.js"></script>
   <script src="./components/controllers/notloggedController.js"></script>
   <script src="./components/controllers/summaryController.js"></script>
 </body>
+
 </html>
