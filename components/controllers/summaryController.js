@@ -5,7 +5,7 @@
 
 'use strict';
 
-angular.module('mostPopularListingsApp.about', ['ngRoute'])
+angular.module('mostPopularListingsApp.summary', ['ngRoute'])
 
 // Routing configuration for this module
 .config(['$routeProvider',function($routeprovider){
@@ -30,7 +30,7 @@ angular.module('mostPopularListingsApp.about', ['ngRoute'])
 
 	function init(){
 	Page.setTitle($scope.user_obj.user_name);
-
+	console.log("summary loaded");
 	};
 	this.message = "Hello About!";
 
