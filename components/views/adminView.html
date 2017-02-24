@@ -1,9 +1,16 @@
 <div class="teal">
 	<div class="container">
 		<h2>Admin Page</h2>
-
 		<div class="row">
-			<div class="teal darken-2 col s12 m6 white-text">
+			<div class="col s12 white">
+				<ul class="tabs">
+					<li class="tab col s3"><a href="#soci">Soci</a></li>
+					<li class="tab col s3"><a class="active" href="#current">Eventi in corso</a></li>
+					<li class="tab col s3 "><a href="#new">Nuovo Evento</a></li>
+					<li class="tab col s3"><a href="#past">Eventi Passati</a></li>
+				</ul>
+			</div>
+			<div id="soci" class="col s12 white">
 				<h4>Soci</h4>
 				<form>
 					<div class="row">
@@ -15,17 +22,23 @@
 					</div>
 				</form>
 			</div>
-
-			<div class="teal darken-2 col s12 m6 white-text">
-				<h4>Eventi</h4>
-				<h5>in corso</h5>
-				...
+			<div id="current" class="col s12">
+				<h4>Eventi in corso</h4>
+				<span>...</span>
+			</div>
+			<div id="new" class="col s12 white">
 				<h5>nuovo evento</h5>
 				<form>
-					<label for="cerca">titolo</label>
-					<input type="text" name="cerca">
-					<button class="btn orange">crea</button>
+					<div class="input-field col s8">
+						<input type="text" name="titolo" ng-model="newEvent.name">
+						<label for="titolo">Titolo</label>
+					</div>
+					<input type="date" class="datepicker col s4">
+
+					<button class="btn orange col s2" ng-click="createEvent(newEvent)">crea</button>
 				</form>
+			</div>
+			<div id="past" class="col s12">
 				<h5>eventi passati</h5>
 				<form>
 					<label for="cerca">Cerca</label>
@@ -33,7 +46,19 @@
 					<button class="btn orange">go</button>
 				</form>
 			</div>
-
 		</div>
+
 	</div>
+
 </div>
+
+<script>
+	$(document).ready(function () {
+		$('ul.tabs').tabs();
+		$('.datepicker').pickadate({
+			selectMonths: true, // Creates a dropdown to control month
+			selectYears: 15 // Creates a dropdown of 15 years to control year
+		});
+	});
+
+</script>

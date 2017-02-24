@@ -79,7 +79,7 @@ mostPopularListingsApp.factory('Auth', ['$http', function ($http) {
 mostPopularListingsApp.factory('Request',['$http', function($http){
 	return{
 		get: function(req_name, payload, callback){
-			var params = {}
+			var params = {};
 			params =  payload;
 			params.request_type = req_name;
 			$http.get('/Soliptica/server/get_request.php', {params: params})
@@ -88,8 +88,21 @@ mostPopularListingsApp.factory('Request',['$http', function($http){
 			})
 			.error(function(response){
 			Materialize.toast(response,4000);
-		})}
-	} 
+		})},
+		post: function(req_name,payload,callback){
+			var params = {};
+			params = payload;
+			params.request_type = req_name;
+			
+			$http.post('/Soliptica/server/post_request.php',{data: params})
+			.success(function(response){
+				callback(response);
+			})
+			.error(function(response){
+				Materialize.toast(response,4000);
+			})
+		}
+	}; 
 }]);
 
 

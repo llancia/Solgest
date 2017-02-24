@@ -16,7 +16,7 @@ angular.module('mostPopularListingsApp.admin', ['ngRoute'])
 	}])
 
 	// Controller definition for this module
-	.controller('AdminController', ['$scope', 'Page', 'Auth', function ($scope, Page, Auth) {
+	.controller('AdminController', ['$scope', 'Page', 'Auth','$location', 'Request', function ($scope, Page, Auth, $location, Request) {
 		if (!Auth.isLoggedIn()) {
 			console.log('DENY');
 			event.preventDefault();
@@ -40,6 +40,12 @@ angular.module('mostPopularListingsApp.admin', ['ngRoute'])
 				limit: 20, // The max amount of results that can be shown at once. Default: Infinity.
 			});
 
+		};
+
+		$scope.createEvent = function(event){
+			Request.post("test",event,function(response){
+				console.log(response);
+			})
 		};
 
 	}]);
