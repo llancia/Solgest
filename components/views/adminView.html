@@ -29,14 +29,25 @@
 			<div id="new" class="col s12 white">
 				<h5>nuovo evento</h5>
 				<form>
-					<div class="input-field col s8">
-						<input type="text" name="titolo" ng-model="newEvent.name">
-						<label for="titolo">Titolo</label>
+					<div class="row">
+						<div class="input-field col s8">
+							<input type="text" name="titolo" ng-model="newEvent.name">
+							<label for="titolo">Titolo</label>
+						</div>
+						<div class="input-field col s4">
+							<input type="date" name="data" class="datepicker" ng-model="newEvent.date">
+							<label for="titolo">Data</label>
+						</div>
 					</div>
-					<input type="date" class="datepicker col s4">
-
-					<button class="btn orange col s2" ng-click="createEvent(newEvent)">crea</button>
+					<div class="row">
+						<div class="input-field col s8">
+							<input type="text" name="location" ng-model="newEvent.location">
+							<label for="location">Location</label>
+						</div>
+						<button class="btn orange col s2" ng-click="createEvent(newEvent)">crea</button>
+					</div>
 				</form>
+
 			</div>
 			<div id="past" class="col s12">
 				<h5>eventi passati</h5>
@@ -57,7 +68,7 @@
 		$('ul.tabs').tabs();
 		$('.datepicker').pickadate({
 			selectMonths: true, // Creates a dropdown to control month
-			selectYears: 15 // Creates a dropdown of 15 years to control year
+			selectYears: 200 // Creates a dropdown of 200 years to control year
 		});
 	});
 
