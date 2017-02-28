@@ -1,12 +1,16 @@
 <div class="container valign-wrapper row">
     <form method="post" name="loginform" class="col s12 m6 offset-m3">
-        <label for="user_name">Username</label>
-        <input id="user_name" type="text" name="user_name" ng-model="form.uname" required />
-        <label for="user_password">Password</label>
-        <input id="user_password" type="password" name="user_password" autocomplete="off" ng-model="form.pswd" required />
-        <input type="checkbox" id="user_rememberme" name="user_rememberme" ng-model="form.remember" value="1" />
-        <label for="user_rememberme">Ricorda</label>
-        <button class="right btn waves-effect waves-light" name="action" type="submit" ng-click="login()">Login</button>
-        <p>{{user_obj.nome}}</p>
+        <div class="row">
+            <label for="user_name">Username</label>
+            <input id="user_name" type="text" name="user_name" ng-model="form.uname" required />
+            <label for="user_password">Password</label>
+            <input id="user_password" type="password" name="user_password" autocomplete="off" ng-model="form.pswd" required />
+            <input type="checkbox" id="user_rememberme" name="user_rememberme" ng-model="form.remember" value="1" />
+            <label for="user_rememberme">Ricorda</label>
+            <button class="right btn waves-effect waves-light" name="action" type="submit" ng-click="login()">Login</button>
+        </div>
+        <div class="row">
+            <a class="right" href="" ng-click="pswd_lost()">Ho dimenticato la password</a>
+        </div>
     </form>
 </div>

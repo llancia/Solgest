@@ -5,7 +5,8 @@ var mostPopularListingsApp = angular.module('mostPopularListingsApp', ['ngRoute'
 	'mostPopularListingsApp.home',
 	  'mostPopularListingsApp.login',
 	  'mostPopularListingsApp.admin',
-	  'mostPopularListingsApp.summary']);
+	  'mostPopularListingsApp.summary',
+	  'mostPopularListingsApp.usercont']);
 
 
 
